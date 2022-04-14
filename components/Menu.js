@@ -6,25 +6,25 @@ import { urlFor } from '@/lib/sanity/sanity'
 const Menu = ({ images, changeShape, changeImage }) => {
 	const [circle, setCircle] = useState(true)
 	return (
-		<div className='fixed top-8 right-8 w-32 flex flex-col justify-center items-center'>
-			<ul className='flex justify-between w-full'>
+		<div className='fixed top-8 right-8 w-36 flex flex-col justify-center items-center'>
+			<ul className='flex justify-around w-full'>
 				<li
-					className='rounded-full w-12 h-12 cursor-pointer'
-					style={{ backgroundColor: circle ? 'white' : '#333' }}
+					className='rounded-full w-8 h-8 cursor-pointer'
+					style={{ backgroundColor: circle ? 'white' : '#666' }}
 					onClick={() => {
 						setCircle(!circle)
 						changeShape(!circle)
 					}}></li>
 				<li
-					className='rounded-lg w-12 h-12 cursor-pointer'
-					style={{ backgroundColor: !circle ? 'white' : '#333' }}
+					className='rounded-lg w-8 h-8 cursor-pointer'
+					style={{ backgroundColor: !circle ? 'white' : '#666' }}
 					onClick={() => {
 						setCircle(!circle)
 						changeShape(!circle)
 					}}></li>
 			</ul>
 
-			<ul>
+			<ul className='flex flex-col justify-center items-center'>
 				{images.map((i) => {
 					const { image, name, _id } = i
 					const url = urlFor(image).url()
@@ -32,12 +32,9 @@ const Menu = ({ images, changeShape, changeImage }) => {
 					return (
 						<li
 							key={_id}
-							className='relative w-full h-full rounded-lg hover:scale-110 my-4'>
-							<Image
+							className='relative w-1/2 h-full rounded-lg hover:scale-110 my-4'>
+							<img
 								src={url}
-								alt={name}
-								width={300}
-								height={200}
 								className='rounded-lg cursor-pointer'
 								onClick={() => {
 									changeImage(_id)
