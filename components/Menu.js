@@ -1,26 +1,24 @@
 import { useState } from 'react'
-import Image from 'next/image'
-import { BiMenu } from 'react-icons/bi'
 import { urlFor } from '@/lib/sanity/sanity'
 
-const Menu = ({ images, changeShape, changeImage }) => {
+const Menu = ({ images, changeImage, changeShape }) => {
 	const [circle, setCircle] = useState(true)
 	return (
-		<div className='fixed top-8 right-8 w-36 flex flex-col justify-center items-center'>
+		<div className='fixed top-8 right-8 w-24 flex flex-col justify-center items-center'>
 			<ul className='flex justify-around w-full'>
 				<li
 					className='rounded-full w-8 h-8 cursor-pointer'
 					style={{ backgroundColor: circle ? 'white' : '#666' }}
 					onClick={() => {
-						setCircle(!circle)
 						changeShape(!circle)
+						setCircle(!circle)
 					}}></li>
 				<li
 					className='rounded-lg w-8 h-8 cursor-pointer'
 					style={{ backgroundColor: !circle ? 'white' : '#666' }}
 					onClick={() => {
-						setCircle(!circle)
 						changeShape(!circle)
+						setCircle(!circle)
 					}}></li>
 			</ul>
 
