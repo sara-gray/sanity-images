@@ -5,12 +5,13 @@ import { getClient } from '@/lib/sanity/sanity.server'
 
 import Menu from '@/components/Menu'
 import ShowImage from '@/components/ShowImage'
+import ShowNextImage from '@/components/ShowNextImage'
 
 export default function Home({ images }) {
 	const [imageId, setImageId] = useState(images ? images[0]._id : null)
 
 	return (
-		<main className='w-screen h-full bg-black text-white overflow-hidden'>
+		<main className='w-screen h-[200vh] bg-black text-white overflow-hidden'>
 			<Head>
 				<title>Sanity.io Image</title>
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
@@ -22,11 +23,11 @@ export default function Home({ images }) {
 				Testing Sanity.io Image Properties
 			</h1>
 
-			<section className='max-w-2xl mx-auto gap-2 text-2xl -mt-12 grid grid-cols-2 pb-24'>
-				<div className='ring-2 rounded-xl row-span-2 w-full h-[62vh]'>
+			<section className='max-w-4xl mx-auto gap-4 text-2xl -mt-12 grid grid-cols-2 pb-24'>
+				<div className='ring-2 rounded-xl row-span-2 w-full h-[60vh]'>
 					<ShowImage title='portrait' images={images} _id={imageId} />
 				</div>
-				<div className='ring-2 rounded-xl w-full h-[30vh]'>
+				<div className='ring-2 rounded-xl w-full h-[20vh]'>
 					<ShowImage title='landscape' images={images} _id={imageId} />
 				</div>
 				<div className='ring-2 rounded-xl w-[30vh] h-[30vh]'>
