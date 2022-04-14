@@ -3,6 +3,10 @@
 Using
 npm install --save @sanity/image-url
 
+# Aim
+
+This code detects the size of the parent div and ensures the image from Sanity.io CDN is positioned correctly and the hot spot and crop are active.
+
 ## References
 
 https://www.sanity.io/docs/presenting-images
